@@ -83,7 +83,6 @@ func main() {
 	results := []voicemail_file{}
 	err = c_files.Find(
 		bson.M{
-			"metadata.user": "5001",
 			"uploadDate": bson.M{
 				"$lt": deleteOlderThan,
 			},
