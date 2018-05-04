@@ -94,6 +94,7 @@ func main() {
 	}
 
 	//loop the files that we're going to delete
+	count := 0
 	for _, file := range results {
 		log.Println("File: " + file.ID.Hex())
 		log.Println("    Uploaded: " + file.UploadDate.String())
@@ -109,10 +110,14 @@ func main() {
 		for _, chunk := range chunks {
 			log.Println("     CHUNK: " + chunk.ID.Hex())
 			//TODO: delete chunk
-			//c_chunks.RemoveId(chunk.ID)
+			c_chunks.RemoveId(chunk.ID)
 		}
 
 		//TODO: delete message
-		//c_files.RemoveId(file.ID)
+		c_files.RemoveId(file.ID)
+		count++
 	}
+
+	log.Printf("Removed %v voicemails", count)
+	log.Println("Finished")
 }
