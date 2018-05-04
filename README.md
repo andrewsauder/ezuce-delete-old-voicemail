@@ -47,3 +47,7 @@ deloldvm -u="myusername"
 ```bash
 deloldvm -p="mypassword"
 ```
+
+
+## Logging
+A log file named *delete-old-voicemail.log* is automatically created in the directory where the executable resides. This log will show database connection errors as well what voicemails are being deleted while the application is running. The total number of voicemails it deletes is appended after each run.
